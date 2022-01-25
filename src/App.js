@@ -1,15 +1,25 @@
+import { useState, useEffect } from "react";
 import "./App.scss";
 import { v1 as uuid } from "uuid";
-import { useEffect } from "react";
-import users from "./data/users";
-import tasks from "./data/tasks";
+import usersdata from "./data/users";
+import tasksdata from "./data/tasks";
+import Taskboard from "./components/taskboard";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [showAddTask, setAddTask] = useState(false);
+
   useEffect(() => {
-    console.log(tasks);
+    setUsers(usersdata);
+    setTasks(tasksdata);
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <Taskboard tasks={tasks} />
+    </div>
+  );
 }
 
 export default App;
