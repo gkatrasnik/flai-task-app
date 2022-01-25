@@ -3,7 +3,7 @@ import "./App.scss";
 import { v1 as uuid } from "uuid";
 import usersdata from "./data/users";
 import tasksdata from "./data/tasks";
-import Taskboard from "./components/taskboard";
+import Taskboard from "./components/Taskboard";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <Taskboard tasks={tasks} />
+      <Taskboard tasks={tasks} users={users} />
     </div>
   );
 }

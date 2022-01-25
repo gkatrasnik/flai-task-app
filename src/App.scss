@@ -1,1 +1,32 @@
 @charset 'utf-8';
+
+.task-card {
+  width: 80%;
+  border: solid black 1px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.task-card-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.heading-center {
+  margin: auto;
+  text-align: center;
+}
+
+.taskboard-li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.taskboard-ul {
+  padding: 0;
+}
+
+.task-details-text {
+  margin-left: 2rem;
+}
