@@ -8,11 +8,13 @@ function Taskboard(props) {
       {props.tasks ? (
         <ul className="taskboard-ul">
           {props.tasks.map((task, index) => {
-            return (
-              <li key={index} className="taskboard-li">
-                <Task task={task} users={props.users} />
-              </li>
-            );
+            if (props.shownAssigneeTasksList.includes(task.assigneeid)) {
+              return (
+                <li key={index} className="taskboard-li">
+                  <Task task={task} users={props.users} />
+                </li>
+              );
+            }
           })}
         </ul>
       ) : (

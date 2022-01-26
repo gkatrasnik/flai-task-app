@@ -4,7 +4,7 @@ import "../App.scss";
 function Navigation(props) {
   return (
     <div className="navigation-div">
-      <button onClick={props.toggleSidebar}>O</button>
+      <button onClick={props.toggleSidebar}>Filter tasks</button>
     </div>
   );
 }

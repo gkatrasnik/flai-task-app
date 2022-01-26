@@ -12,21 +12,52 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [showAddTask, setAddTask] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+  const [shownAssigneeTasksList, setShownAssigneeTasksList] = useState([]);
 
   const toggleSidebar = () => {
     return setShowSidebar(!showSidebar);
   };
 
+  const updateShowTasksList = (assigneeId) => {
+    let showUsersTasksList = [...shownAssigneeTasksList];
+    let newUsersTasksList = [];
+    if (showUsersTasksList.includes(assigneeId)) {
+      newUsersTasksList = showUsersTasksList.filter(
+        (assignee) => assignee !== assigneeId
+      );
+    } else {
+      newUsersTasksList = showUsersTasksList;
+      newUsersTasksList.push(assigneeId);
+    }
+    setShownAssigneeTasksList(newUsersTasksList);
+  };
+
+  const populateShowTasksList = () => {
+    let newShowTasksList = [];
+    usersdata.forEach((user) => newShowTasksList.push(user.userid));
+
+    setShownAssigneeTasksList(newShowTasksList);
+  };
+
   useEffect(() => {
     setUsers(usersdata);
     setTasks(tasksdata);
+    populateShowTasksList();
   }, []);
 
   return (
     <div>
       <Navigation toggleSidebar={toggleSidebar} />
-      <Sidebar showSidebar={showSidebar} />
-      <Taskboard tasks={tasks} users={users} />
+      <Sidebar
+        showSidebar={showSidebar}
+        updateShowTasksList={updateShowTasksList}
+        users={users}
+      />
+      <Taskboard
+        tasks={tasks}
+        shownAssigneeTasksList={shownAssigneeTasksList}
+        users={users}
+      />
     </div>
   );
 }
