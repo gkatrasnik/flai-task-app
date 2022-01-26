@@ -5,11 +5,14 @@
   border: solid black 1px;
   margin: auto;
   margin-bottom: 2rem;
+  background-color: lightgrey;
 }
 
 .task-card-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .heading-center {
