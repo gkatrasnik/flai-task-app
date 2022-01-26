@@ -5,21 +5,21 @@ function Task(props) {
   const [assignee, setAssignee] = useState("");
   const [reporter, setReporter] = useState("");
 
-  const [taskOpened, setTaskOpened] = useState(false);
+  const [taskExpanded, setTaskExpanded] = useState(false);
 
   const handleTaskClick = () => {
-    setTaskOpened(!taskOpened);
+    setTaskExpanded(!taskExpanded);
   };
 
   useEffect(() => {
-    let assignee = props.users.filter(
+    let assignee = props.users.find(
       (user) => user.userid === props.task.assigneeid
     );
-    let reporter = props.users.filter(
+    let reporter = props.users.find(
       (user) => user.userid === props.task.reporterid
     );
-    setAssignee(assignee[0]);
-    setReporter(reporter[0]);
+    setAssignee(assignee);
+    setReporter(reporter);
   }, []);
 
   return (
@@ -30,7 +30,7 @@ function Task(props) {
           For: {assignee.name} {assignee.surname}
         </p>
       </div>
-      {taskOpened && (
+      {taskExpanded && (
         <div>
           <p className="task-details-text">
             Task by: {reporter.name} {reporter.surname}
