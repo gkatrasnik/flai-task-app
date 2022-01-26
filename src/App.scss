@@ -79,3 +79,10 @@
   padding-left: 0.5rem;
   padding-bottom: 0.3rem;
 }
+
+.updown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

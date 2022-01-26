@@ -29,6 +29,10 @@ function Task(props) {
         <p>
           For: {assignee.name} {assignee.surname}
         </p>
+        <div className="updown">
+          <button>↑</button>
+          <button>↓</button>
+        </div>
       </div>
       {taskExpanded && (
         <div>
