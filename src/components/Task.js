@@ -31,14 +31,16 @@ function Task(props) {
         </p>
         <div className="updown">
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               props.moveTaskUp(props.task);
             }}
           >
             ↑
           </button>
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               props.moveTaskDown(props.task);
             }}
           >
