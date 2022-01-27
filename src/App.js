@@ -97,8 +97,24 @@ function App() {
     setTasks(masterTasksArr);
   };
 
+  // delete task *******************************************
+  const deleteTask = (task) => {
+    let masterTasksArr = [...tasks];
+    let taskIndex = masterTasksArr.indexOf(task);
+
+    masterTasksArr.splice(taskIndex, 1);
+    setTasks(masterTasksArr);
+  };
+
   const handleCurrentUser = (user) => {
     setCurrentUser(user);
+  };
+
+  // edit task**************************
+  const editTask = (taskid) => {
+    let masterTasksArr = [...tasks];
+
+    setTasks(masterTasksArr);
   };
 
   //run on app load
@@ -148,6 +164,8 @@ function App() {
         shownAssigneeTasksList={shownAssigneeTasksList}
         moveTaskUp={moveTaskUp}
         moveTaskDown={moveTaskDown}
+        deleteTask={deleteTask}
+        editTask={editTask}
       />
     </div>
   );

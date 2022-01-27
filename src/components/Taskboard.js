@@ -15,6 +15,8 @@ function Taskboard(props) {
                   users={props.users}
                   moveTaskUp={props.moveTaskUp}
                   moveTaskDown={props.moveTaskDown}
+                  deleteTask={props.deleteTask}
+                  editTask={props.editTask}
                 />
               </li>
             );

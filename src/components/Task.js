@@ -49,8 +49,24 @@ function Task(props) {
             </button>
           </div>
           <div className="control-buttons">
-            <button className="custom-button">Edit</button>
-            <button className="custom-button">Delete</button>
+            <button
+              className="custom-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                props.editTask(props.task);
+              }}
+            >
+              Edit
+            </button>
+            <button
+              className="custom-button"
+              onClick={(e) => {
+                e.stopPropagation();
+                props.deleteTask(props.task);
+              }}
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
