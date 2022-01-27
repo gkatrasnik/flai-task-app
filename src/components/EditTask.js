@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { v1 as uuid } from "uuid";
+import React, { useState } from "react";
 import "../App.scss";
 
 import UserDropdown from "./UserDropdown";
