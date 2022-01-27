@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.scss";
 import EditTask from "./EditTask";
+import Markdown from "marked-react";
 
 function Task(props) {
   const [assignee, setAssignee] = useState("");
@@ -92,9 +93,9 @@ function Task(props) {
               Task by: {reporter.name} {reporter.surname}
             </p>
             <label className="task-details-text">Description:</label>
-            <p className="task-details-text task-description-text">
-              {props.task.description}
-            </p>
+            <div className="task-details-text task-description-text">
+              <Markdown>{props.task.description}</Markdown>
+            </div>
           </div>
         )}
       </div>

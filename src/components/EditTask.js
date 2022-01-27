@@ -56,10 +56,12 @@ function EditTask(props) {
         />
 
         <label for="description">Description:</label>
-        <input
+        <textarea
           type="text"
           id="description"
           name="description"
+          rows="5"
+          cols="50"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
