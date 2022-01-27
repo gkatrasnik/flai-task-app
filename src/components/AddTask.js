@@ -55,10 +55,7 @@ function AddTask(props) {
           value={topic}
           onChange={(e) => setTopic(e.target.value)}
         />
-<<<<<<< HEAD
-=======
 
->>>>>>> 72e53f5fffa602fee02317965f2d7e0c59e4be47
         <label for="description">Description:</label>
         <textarea
           type="text"
