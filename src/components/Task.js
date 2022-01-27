@@ -25,27 +25,33 @@ function Task(props) {
   return (
     <div className="task-card" onClick={handleTaskClick}>
       <div className="task-card-header">
-        <h3>{props.task.topic}</h3>
-        <p>
+        <h5>{props.task.topic} </h5>
+        <p className="task-details-text">
           For: {assignee.name} {assignee.surname}
         </p>
-        <div className="updown">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              props.moveTaskUp(props.task);
-            }}
-          >
-            ↑
-          </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              props.moveTaskDown(props.task);
-            }}
-          >
-            ↓
-          </button>
+        <div className="task-buttons">
+          <div className="updown custom-button">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                props.moveTaskUp(props.task);
+              }}
+            >
+              ↑
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                props.moveTaskDown(props.task);
+              }}
+            >
+              ↓
+            </button>
+          </div>
+          <div className="control-buttons">
+            <button className="custom-button">Edit</button>
+            <button className="custom-button">Delete</button>
+          </div>
         </div>
       </div>
       {taskExpanded && (

@@ -1,18 +1,24 @@
 @charset 'utf-8';
 
+$primary-color: #3890b8;
+$secondary-color: #ce5d1b;
+$background-dark-color: #b6b6b6;
+$background-light-color: #dadada;
+
 .task-card {
   width: 80%;
   border: solid black 1px;
   margin: auto;
   margin-bottom: 2rem;
-  background-color: lightgrey;
+  background-color: $background-light-color;
+  cursor: pointer;
 }
 
 .task-card-header {
   display: flex;
   justify-content: space-between;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .heading-center {
@@ -38,13 +44,13 @@
   display: flex;
   padding: 1rem;
   width: 100%;
-  background-color: lightblue;
+  background-color: $background-dark-color;
 }
 
 .sidebar-div {
   height: 100%;
-  width: 200px;
-  background-color: lightgreen;
+  width: 15rem;
+  background-color: $background-dark-color;
   position: fixed !important;
   z-index: 1;
   overflow: auto;
@@ -78,6 +84,20 @@
 .sidebaruser-label {
   padding-left: 0.5rem;
   padding-bottom: 0.3rem;
+}
+
+.custom-button {
+  margin: 0 5px;
+}
+
+.task-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .updown {
