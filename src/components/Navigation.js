@@ -15,7 +15,7 @@ function Navigation(props) {
       <button onClick={props.toggleAddTask} className="custom-button">
         Add Task
       </button>
-      <div>
+      <div className="nav-control">
         Current user:{" "}
         <UserDropdown
           users={props.users}

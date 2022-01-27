@@ -156,6 +156,7 @@ function App() {
         showSidebar={showSidebar}
         updateShowTasksList={updateShowTasksList}
         users={users}
+        toggleSidebar={toggleSidebar}
       />
       <Taskboard
         users={users}

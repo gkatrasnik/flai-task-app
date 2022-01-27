@@ -5,10 +5,13 @@ import SidebarUser from "./SidebarUser";
 function Sidebar(props) {
   return (
     <div
-      className={`sidebar-div ${
+      className={`sidebar-div box-shadow ${
         props.showSidebar ? "sidebar-shown" : "sidebar-hidden"
       }`}
     >
+      <button className="close-button" onClick={props.toggleSidebar}>
+        X
+      </button>
       <h2>Tasks for:</h2>
       {props.users ? (
         <ul className="sidebar-ul">

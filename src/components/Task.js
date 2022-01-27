@@ -26,6 +26,10 @@ function Task(props) {
     );
     setAssignee(assignee);
     setReporter(reporter);
+
+    if (props.index === 0) {
+      setTaskExpanded(true);
+    }
   }, [props]);
 
   return (
@@ -40,58 +44,60 @@ function Task(props) {
           users={props.users}
         />
       )}
-      <div className="task-card" onClick={handleTaskClick}>
+      <div className="task-card box-shadow" onClick={handleTaskClick}>
         <div className="task-card-header">
           <h5 className="task-title">{props.task.topic} </h5>
           <p className="task-details-text">
             For: {assignee.name} {assignee.surname}
           </p>
-          <div className="task-buttons">
-            <div className="updown custom-button">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  props.moveTaskUp(props.task);
-                }}
-              >
-                ↑
-              </button>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  props.moveTaskDown(props.task);
-                }}
-              >
-                ↓
-              </button>
-            </div>
-            <div className="control-buttons">
-              <button
-                className="custom-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleEditTask();
-                }}
-              >
-                Edit
-              </button>
-              <button
-                className="custom-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  props.deleteTask(props.task);
-                }}
-              >
-                Delete
-              </button>
-            </div>
+          <div className="updown custom-button">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                props.moveTaskUp(props.task);
+              }}
+            >
+              ↑
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                props.moveTaskDown(props.task);
+              }}
+            >
+              ↓
+            </button>
           </div>
         </div>
         {taskExpanded && (
           <div>
-            <p className="task-details-text">
-              Task by: {reporter.name} {reporter.surname}
-            </p>
+            <div className="task-details">
+              <p className="task-details-text">
+                Task by: {reporter.name} {reporter.surname}
+              </p>
+              <div className="task-buttons">
+                <div className="control-buttons">
+                  <button
+                    className="custom-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleEditTask();
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="custom-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      props.deleteTask(props.task);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
             <label className="task-details-text">Description:</label>
             <div className="task-details-text task-description-text">
               <Markdown>{props.task.description}</Markdown>

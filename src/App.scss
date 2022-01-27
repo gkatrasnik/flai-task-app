@@ -9,14 +9,16 @@ $background-light-color: #dadada;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 80vw;
   max-width: 25rem;
-  min-height: 8rem;
-  border: solid black 1px;
-  margin: auto;
+  min-height: 5rem;
+  border: solid $primary-color 2px;
   margin-bottom: 2rem;
+
   background-color: $background-light-color;
   cursor: pointer;
+
+  border-radius: 20px;
 }
 
 .task-card-header {
@@ -29,20 +31,31 @@ $background-light-color: #dadada;
   margin-right: 5px;
 }
 
+.task-details {
+  display: flex;
+  justify-content: space-between;
+}
+
 .heading-center {
   margin: auto;
   text-align: center;
 }
 
+.taskboard {
+  margin-top: 70px;
+}
+
 .taskboard-li {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .taskboard-ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 0;
 }
 
@@ -54,19 +67,24 @@ $background-light-color: #dadada;
   margin-top: 0;
 }
 
-.task-title {
-}
-
 .navigation-div {
   display: flex;
+  justify-content: flex-end;
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 100%;
   background-color: $background-dark-color;
+  position: absolute;
+  top: 0;
+}
+
+.nav-control {
+  padding-right: 1rem;
 }
 
 .sidebar-div {
   height: 100%;
+  top: 0;
   width: 15rem;
   background-color: $background-dark-color;
   position: fixed !important;
@@ -165,4 +183,8 @@ $background-light-color: #dadada;
   position: absolute;
   right: 15px;
   top: 15px;
+}
+
+.box-shadow {
+  box-shadow: 5px 5px 10px grey;
 }
