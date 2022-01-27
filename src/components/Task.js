@@ -20,7 +20,7 @@ function Task(props) {
     );
     setAssignee(assignee);
     setReporter(reporter);
-  }, []);
+  }, [props]);
 
   return (
     <div className="task-card" onClick={handleTaskClick}>

@@ -1,20 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Task from "./Task";
 
 function Taskboard(props) {
+  useEffect(() => {
+    console.log("from taskboard: ", props.displayedTasks);
+  }, [props.displayedTasks]);
+
   return (
     <>
       <h1 className="heading-center">Tasks</h1>
-      {props.tasks ? (
+      {props.displayedTasks ? (
         <ul className="taskboard-ul">
-          {props.tasks.map((task, index) => {
-            if (props.shownAssigneeTasksList.includes(task.assigneeid)) {
-              return (
-                <li key={index} className="taskboard-li">
-                  <Task task={task} users={props.users} />
-                </li>
-              );
-            }
+          {props.displayedTasks.map((task, index) => {
+            return (
+              <li key={index} className="taskboard-li">
+                <Task task={task} users={props.users} />
+              </li>
+            );
           })}
         </ul>
       ) : (
