@@ -5,6 +5,11 @@ $secondary-color: #ce5d1b;
 $background-dark-color: #b6b6b6;
 $background-light-color: #dadada;
 
+button {
+  border: solid $secondary-color 1px;
+  border-radius: 5px;
+}
+
 .task-card {
   display: flex;
   flex-direction: column;
@@ -76,6 +81,7 @@ $background-light-color: #dadada;
   background-color: $background-dark-color;
   position: absolute;
   top: 0;
+  border-bottom: solid $primary-color 2px;
 }
 
 .nav-control {
@@ -151,9 +157,10 @@ $background-light-color: #dadada;
   margin-right: auto;
   width: 80%;
   max-width: 20rem;
-  border: solid black 1px;
+  border: solid $primary-color 2px;
   margin: 3rem auto 2rem;
   background-color: $background-light-color;
+  border-radius: 20px;
 }
 
 .addtask-form {
@@ -174,9 +181,10 @@ $background-light-color: #dadada;
   margin-right: auto;
   width: 80%;
   max-width: 20rem;
-  border: solid black 1px;
+  border: solid $primary-color 2px;
   margin: 3rem auto 2rem;
   background-color: $background-light-color;
+  border-radius: 20px;
 }
 
 .close-button {
