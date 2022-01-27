@@ -6,17 +6,23 @@ import tasksdata from "./data/tasks";
 import Taskboard from "./components/Taskboard";
 import Navigation from "./components/Navigation";
 import Sidebar from "./components/Sidebar";
+import AddTask from "./components/AddTask";
 
 function App() {
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [showAddTask, setAddTask] = useState(false);
+  const [currentUser, setCurrentUser] = useState();
+  const [showAddTask, setShowAddTask] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [shownAssigneeTasksList, setShownAssigneeTasksList] = useState([]); // displayed users
   const [displayedTasks, setDisplayedTasks] = useState([]);
 
   const toggleSidebar = () => {
     return setShowSidebar(!showSidebar);
+  };
+
+  const toggleAddTask = () => {
+    return setShowAddTask(!showAddTask);
   };
 
   //updates list of users whose tasks are displayed in taskboard (if user on list -> remove user, if not on list -> add user)
@@ -46,6 +52,11 @@ function App() {
     let newDisplayedTasksList = [];
     tasksdata.forEach((task) => newDisplayedTasksList.push(task));
     setDisplayedTasks(newDisplayedTasksList);
+  };
+
+  //on app load populates currentUser with first user from data
+  const populateCurrentUser = () => {
+    setCurrentUser(usersdata[0].userid);
   };
 
   //filter which tasks to display and sets displayedTasks in state
@@ -84,6 +95,17 @@ function App() {
     setTasks(masterTasksArr);
   };
 
+  //add new task to tasks array
+  const addNewTask = (task) => {
+    let masterTasksArr = [...tasks];
+    masterTasksArr.unshift(task);
+    setTasks(masterTasksArr);
+  };
+
+  const handleCurrentUser = (user) => {
+    setCurrentUser(user);
+  };
+
   //run on app load
   useEffect(() => {
     //loads data from files to state
@@ -91,6 +113,7 @@ function App() {
     setTasks(tasksdata);
 
     //populates displayed users and displayed tasks
+    populateCurrentUser();
     populateShowUsersTasks();
     populateDisplayedTasks();
   }, []);
@@ -102,7 +125,14 @@ function App() {
 
   return (
     <div>
-      <Navigation toggleSidebar={toggleSidebar} />
+      <Navigation
+        toggleSidebar={toggleSidebar}
+        toggleAddTask={toggleAddTask}
+        handleCurrentUser={handleCurrentUser}
+        currentUser={currentUser}
+        users={users}
+      />
+      {showAddTask && <AddTask addNewTask={addNewTask} users={users} />}
       <Sidebar
         showSidebar={showSidebar}
         updateShowTasksList={updateShowTasksList}

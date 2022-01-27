@@ -2,10 +2,6 @@ import React, { useEffect, useState } from "react";
 import Task from "./Task";
 
 function Taskboard(props) {
-  useEffect(() => {
-    console.log("from taskboard: ", props.displayedTasks);
-  }, [props.displayedTasks]);
-
   return (
     <>
       <h1 className="heading-center">Tasks</h1>

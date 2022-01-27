@@ -42,7 +42,8 @@ $background-light-color: #dadada;
 
 .navigation-div {
   display: flex;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   width: 100%;
   background-color: $background-dark-color;
 }
@@ -105,4 +106,22 @@ $background-light-color: #dadada;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.addtask-div {
+  width: 80%;
+  max-width: 20rem;
+  border: solid black 1px;
+  margin: 3rem auto 2rem;
+  background-color: $background-light-color;
+}
+
+.addtask-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.addtask-heading {
+  margin-top: 10px;
 }
