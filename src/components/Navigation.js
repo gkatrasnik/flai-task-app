@@ -12,11 +12,17 @@ function Navigation(props) {
       <button onClick={props.toggleSidebar} className="custom-button">
         Filter tasks
       </button>
-
       <button onClick={props.toggleAddTask} className="custom-button">
         Add Task
       </button>
-      <UserDropdown users={props.users} handleUserSelect={handleUserSelect} />
+      <div>
+        Current user:{" "}
+        <UserDropdown
+          users={props.users}
+          handleUserSelect={handleUserSelect}
+          default={props.currentUser}
+        />
+      </div>
     </div>
   );
 }

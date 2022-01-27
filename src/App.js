@@ -97,7 +97,7 @@ function App() {
     setTasks(masterTasksArr);
   };
 
-  // delete task *******************************************
+  // delete task
   const deleteTask = (task) => {
     let masterTasksArr = [...tasks];
     let taskIndex = masterTasksArr.indexOf(task);
@@ -110,10 +110,10 @@ function App() {
     setCurrentUser(user);
   };
 
-  // edit task**************************
-  const editTask = (taskid) => {
+  const editTask = (oldtask, newtask) => {
     let masterTasksArr = [...tasks];
-
+    let taskIndex = masterTasksArr.indexOf(oldtask);
+    masterTasksArr[taskIndex] = newtask;
     setTasks(masterTasksArr);
   };
 
@@ -166,6 +166,7 @@ function App() {
         moveTaskDown={moveTaskDown}
         deleteTask={deleteTask}
         editTask={editTask}
+        currentUser={currentUser}
       />
     </div>
   );

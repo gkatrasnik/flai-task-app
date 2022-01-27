@@ -4,6 +4,7 @@ function UserDropdown(props) {
       onChange={(e) => {
         props.handleUserSelect(e.target.value);
       }}
+      defaultValue={props.default}
     >
       {props.users &&
         props.users.map((user, index) => (

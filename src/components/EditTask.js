@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { v1 as uuid } from "uuid";
 import "../App.scss";
 
 import UserDropdown from "./UserDropdown";
 
-function AddTask(props) {
-  const [assigneeid, setAssigneeid] = useState(props.currentUser); // just default value
-  const [topic, setTopic] = useState("");
-  const [description, setDescription] = useState("");
+function EditTask(props) {
+  const [assigneeid, setAssigneeid] = useState(props.assignee.userid); // just default value
+  const [topic, setTopic] = useState(props.task.topic);
+  const [description, setDescription] = useState(props.task.description);
 
-  const handleAddTask = () => {
+  const handleEditTask = () => {
     if (!topic || !description) {
       return alert("please fill in all boxes");
     }
 
     let newTask = {
-      taskid: uuid(),
+      taskid: props.task.taskid,
       reporterid: props.currentUser,
       assigneeid: assigneeid,
       topic: topic,
       description: description,
     };
 
-    props.addNewTask(newTask);
     setTopic("");
     setDescription("");
-    props.toggleAddTask();
+    props.toggleEditTask();
+    props.editTask(props.task, newTask);
   };
 
   const handleUserSelect = (user) => {
@@ -33,18 +33,18 @@ function AddTask(props) {
   };
 
   return (
-    <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleAddTask}>
+    <div className="edittask-div">
+      <button className="close-button" onClick={props.toggleEditTask}>
         X
       </button>
-      <h2 className="heading-center addtask-heading">Add Task</h2>
+      <h2 className="heading-center addtask-heading">Edit Task</h2>
 
       <div className="addtask-form">
         <label for="assignee">Task for:</label>
         <UserDropdown
           users={props.users}
           handleUserSelect={handleUserSelect}
-          default={props.currentUser}
+          default={assigneeid}
         />
 
         <label for="topic">Topic:</label>
@@ -65,9 +65,9 @@ function AddTask(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
         <br />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button onClick={handleEditTask}>Update Task</button>
       </div>
     </div>
   );
 }
-export default AddTask;
+export default EditTask;

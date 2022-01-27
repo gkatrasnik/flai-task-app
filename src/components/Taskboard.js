@@ -17,6 +17,7 @@ function Taskboard(props) {
                   moveTaskDown={props.moveTaskDown}
                   deleteTask={props.deleteTask}
                   editTask={props.editTask}
+                  currentUser={props.currentUser}
                 />
               </li>
             );

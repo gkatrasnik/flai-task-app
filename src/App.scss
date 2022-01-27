@@ -6,7 +6,12 @@ $background-dark-color: #b6b6b6;
 $background-light-color: #dadada;
 
 .task-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 80%;
+  max-width: 25rem;
+  min-height: 8rem;
   border: solid black 1px;
   margin: auto;
   margin-bottom: 2rem;
@@ -17,8 +22,11 @@ $background-light-color: #dadada;
 .task-card-header {
   display: flex;
   justify-content: space-between;
+
   padding-left: 5px;
   padding-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .heading-center {
@@ -33,11 +41,20 @@ $background-light-color: #dadada;
 }
 
 .taskboard-ul {
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
 }
 
 .task-details-text {
   margin-left: 2rem;
+}
+
+.task-description-text {
+  margin-top: 0;
+}
+
+.task-title {
 }
 
 .navigation-div {
@@ -109,6 +126,11 @@ $background-light-color: #dadada;
 }
 
 .addtask-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 80%;
   max-width: 20rem;
   border: solid black 1px;
@@ -124,4 +146,23 @@ $background-light-color: #dadada;
 
 .addtask-heading {
   margin-top: 10px;
+}
+
+.edittask-div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 20rem;
+  border: solid black 1px;
+  margin: 3rem auto 2rem;
+  background-color: $background-light-color;
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
 }
