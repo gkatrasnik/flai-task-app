@@ -59,6 +59,31 @@ function App() {
     setDisplayedTasks(newDisplayedTasks);
   };
 
+  //swap positions helper
+  const swapPositions = (array, a, b) => {
+    [array[a], array[b]] = [array[b], array[a]];
+  };
+
+  //move task up (index -> index -1)
+  const moveTaskUp = (task) => {
+    let masterTasksArr = [...tasks];
+    let indexFrom = masterTasksArr.indexOf(task);
+    if (indexFrom > 0) {
+      swapPositions(masterTasksArr, indexFrom, indexFrom - 1);
+    }
+    setTasks(masterTasksArr);
+  };
+
+  //move task down (index -> index + 1)
+  const moveTaskDown = (task) => {
+    let masterTasksArr = [...tasks];
+    let indexFrom = masterTasksArr.indexOf(task);
+    if (indexFrom < masterTasksArr.length - 1) {
+      swapPositions(masterTasksArr, indexFrom, indexFrom + 1);
+    }
+    setTasks(masterTasksArr);
+  };
+
   //run on app load
   useEffect(() => {
     //loads data from files to state
@@ -73,7 +98,7 @@ function App() {
   //monitor checked users to display tasks and filter tasks
   useEffect(() => {
     filterDisplayedTasks();
-  }, [shownAssigneeTasksList]);
+  }, [shownAssigneeTasksList, tasks]);
 
   return (
     <div>
@@ -88,6 +113,8 @@ function App() {
         displayedTasks={displayedTasks}
         filterDisplayedTasks={filterDisplayedTasks}
         shownAssigneeTasksList={shownAssigneeTasksList}
+        moveTaskUp={moveTaskUp}
+        moveTaskDown={moveTaskDown}
       />
     </div>
   );

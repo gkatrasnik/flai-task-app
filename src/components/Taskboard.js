@@ -14,7 +14,12 @@ function Taskboard(props) {
           {props.displayedTasks.map((task, index) => {
             return (
               <li key={index} className="taskboard-li">
-                <Task task={task} users={props.users} />
+                <Task
+                  task={task}
+                  users={props.users}
+                  moveTaskUp={props.moveTaskUp}
+                  moveTaskDown={props.moveTaskDown}
+                />
               </li>
             );
           })}

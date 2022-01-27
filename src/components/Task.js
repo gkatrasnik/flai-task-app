@@ -30,8 +30,20 @@ function Task(props) {
           For: {assignee.name} {assignee.surname}
         </p>
         <div className="updown">
-          <button>↑</button>
-          <button>↓</button>
+          <button
+            onClick={() => {
+              props.moveTaskUp(props.task);
+            }}
+          >
+            ↑
+          </button>
+          <button
+            onClick={() => {
+              props.moveTaskDown(props.task);
+            }}
+          >
+            ↓
+          </button>
         </div>
       </div>
       {taskExpanded && (
