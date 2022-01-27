@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { v1 as uuid } from "uuid";
 import "../App.scss";
+
 import UserDropdown from "./UserDropdown";
 
 function AddTask(props) {
-  const [assigneeid, setAssigneeid] = useState("");
+  const [assigneeid, setAssigneeid] = useState(props.currentUser); // just default value
   const [topic, setTopic] = useState("");
   const [description, setDescription] = useState("");
 
   const handleAddTask = () => {
+    if (!topic || !description) {
+      return alert("please fill in all boxes");
+    }
+
     let newTask = {
       taskid: uuid(),
       reporterid: props.currentUser,
@@ -18,6 +23,9 @@ function AddTask(props) {
     };
 
     props.addNewTask(newTask);
+    setTopic("");
+    setDescription("");
+    props.toggleAddTask();
   };
 
   const handleUserSelect = (user) => {
@@ -37,6 +45,7 @@ function AddTask(props) {
           type="text"
           id="topic"
           name="topic"
+          value={topic}
           onChange={(e) => setTopic(e.target.value)}
         />
 
@@ -45,6 +54,7 @@ function AddTask(props) {
           type="text"
           id="description"
           name="description"
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <br />

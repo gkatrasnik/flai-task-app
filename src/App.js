@@ -54,11 +54,6 @@ function App() {
     setDisplayedTasks(newDisplayedTasksList);
   };
 
-  //on app load populates currentUser with first user from data
-  const populateCurrentUser = () => {
-    setCurrentUser(usersdata[0].userid);
-  };
-
   //filter which tasks to display and sets displayedTasks in state
   const filterDisplayedTasks = () => {
     let newDisplayedTasks = [];
@@ -113,9 +108,10 @@ function App() {
     setTasks(tasksdata);
 
     //populates displayed users and displayed tasks
-    populateCurrentUser();
+
     populateShowUsersTasks();
     populateDisplayedTasks();
+    handleCurrentUser(usersdata[0].userid);
   }, []);
 
   //monitor checked users to display tasks and filter tasks
@@ -132,7 +128,14 @@ function App() {
         currentUser={currentUser}
         users={users}
       />
-      {showAddTask && <AddTask addNewTask={addNewTask} users={users} />}
+      {showAddTask && (
+        <AddTask
+          addNewTask={addNewTask}
+          users={users}
+          currentUser={currentUser}
+          toggleAddTask={toggleAddTask}
+        />
+      )}
       <Sidebar
         showSidebar={showSidebar}
         updateShowTasksList={updateShowTasksList}
