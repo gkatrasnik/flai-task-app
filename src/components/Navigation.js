@@ -9,12 +9,6 @@ function Navigation(props) {
 
   return (
     <div className="navigation-div">
-      <button onClick={props.toggleSidebar} className="custom-button">
-        Filter tasks
-      </button>
-      <button onClick={props.toggleAddTask} className="custom-button">
-        Add Task
-      </button>
       <div className="nav-control">
         Current user:{" "}
         <UserDropdown

@@ -2,6 +2,9 @@
 
 $primary-color: #3890b8;
 $secondary-color: #ce5d1b;
+$yellow-color: #fff7ad;
+$yellow-dark-color: #e7bd00;
+
 $background-dark-color: #b6b6b6;
 $background-light-color: #dadada;
 
@@ -17,13 +20,13 @@ button {
   width: 80vw;
   max-width: 25rem;
   min-height: 5rem;
-  border: solid $primary-color 2px;
+  border: solid $yellow-dark-color 2px;
   margin-bottom: 2rem;
 
-  background-color: $background-light-color;
+  background-color: $yellow-color;
   cursor: pointer;
 
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 .task-card-header {
@@ -66,6 +69,11 @@ button {
   @media (min-width: 900px) {
     justify-content: flex-start;
   }
+}
+
+.taskboard-buttons {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .task-details-text {
@@ -161,10 +169,10 @@ button {
   margin-right: auto;
   width: 80%;
   max-width: 20rem;
-  border: solid $primary-color 2px;
+  border: solid $yellow-dark-color 2px;
   margin: 3rem auto 2rem;
   background-color: $background-light-color;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 .addtask-form {
@@ -185,10 +193,10 @@ button {
   margin-right: auto;
   width: 80%;
   max-width: 20rem;
-  border: solid $primary-color 2px;
+  border: solid $yellow-dark-color 2px;
   margin: 3rem auto 2rem;
   background-color: $background-light-color;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 .close-button {

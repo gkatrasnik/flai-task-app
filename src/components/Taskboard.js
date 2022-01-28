@@ -5,6 +5,14 @@ function Taskboard(props) {
   return (
     <div className="taskboard">
       <h1 className="heading-center taskboard-heading">Tasks</h1>
+      <div className="heading-center taskboard-buttons">
+        <button onClick={props.toggleSidebar} className="custom-button">
+          Filter tasks
+        </button>
+        <button onClick={props.toggleAddTask} className="custom-button">
+          Add Task
+        </button>
+      </div>
       {props.displayedTasks ? (
         <ul className="taskboard-ul">
           {props.displayedTasks.map((task, index) => {

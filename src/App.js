@@ -138,8 +138,6 @@ function App() {
   return (
     <div>
       <Navigation
-        toggleSidebar={toggleSidebar}
-        toggleAddTask={toggleAddTask}
         handleCurrentUser={handleCurrentUser}
         currentUser={currentUser}
         users={users}
@@ -167,6 +165,8 @@ function App() {
         moveTaskDown={moveTaskDown}
         deleteTask={deleteTask}
         editTask={editTask}
+        toggleSidebar={toggleSidebar}
+        toggleAddTask={toggleAddTask}
         currentUser={currentUser}
       />
     </div>
