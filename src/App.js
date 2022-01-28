@@ -158,19 +158,24 @@ function App() {
           toggleSidebar={toggleSidebar}
         />
         <Routes>
-          <Taskboard
-            users={users}
-            displayedTasks={displayedTasks}
-            filterDisplayedTasks={filterDisplayedTasks}
-            shownAssigneeTasksList={shownAssigneeTasksList}
-            moveTaskUp={moveTaskUp}
-            moveTaskDown={moveTaskDown}
-            deleteTask={deleteTask}
-            editTask={editTask}
-            toggleSidebar={toggleSidebar}
-            toggleAddTask={toggleAddTask}
-            currentUser={currentUser}
-          />
+          <Route
+            path="/"
+            element={
+              <Taskboard
+                users={users}
+                displayedTasks={displayedTasks}
+                filterDisplayedTasks={filterDisplayedTasks}
+                shownAssigneeTasksList={shownAssigneeTasksList}
+                moveTaskUp={moveTaskUp}
+                moveTaskDown={moveTaskDown}
+                deleteTask={deleteTask}
+                editTask={editTask}
+                toggleSidebar={toggleSidebar}
+                toggleAddTask={toggleAddTask}
+                currentUser={currentUser}
+              />
+            }
+          ></Route>
         </Routes>
       </HashRouter>
     </div>
