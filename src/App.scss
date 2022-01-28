@@ -13,6 +13,11 @@ button {
   border-radius: 2px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .task-card {
   display: flex;
   flex-direction: column;

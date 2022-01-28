@@ -117,11 +117,24 @@ function App() {
     setTasks(masterTasksArr);
   };
 
+  const getTasksData = () => {
+    let storedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if (!storedTasks) {
+      setTasks(tasksdata); //data from tasks.js file
+    } else {
+      setTasks(storedTasks);
+    }
+  };
+
+  const setTasksData = () => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  };
+
   //run on app load
   useEffect(() => {
-    //loads data from files to state
+    //loads data and sets state
     setUsers(usersdata);
-    setTasks(tasksdata);
+    getTasksData();
 
     //populates displayed users and displayed tasks
 
@@ -133,6 +146,7 @@ function App() {
   //monitor checked users to display tasks and filter tasks
   useEffect(() => {
     filterDisplayedTasks();
+    setTasksData();
   }, [shownAssigneeTasksList, tasks]);
 
   return (

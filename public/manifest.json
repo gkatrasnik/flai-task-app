@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "short_name": "Flai Task App",
-  "name": "Flai Task pp",
-=======
-  "short_name": "React App",
-  "name": "Create React App Sample",
->>>>>>> 72e53f5fffa602fee02317965f2d7e0c59e4be47
+  "name": "Flai Task App",
   "icons": [
     {
       "src": "favicon.ico",

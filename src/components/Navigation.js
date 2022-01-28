@@ -11,9 +11,15 @@ function Navigation(props) {
   return (
     <div className="navigation-div">
       <div className="nav-control">
-        <Link to="/">Tasks</Link>
-        <Link to="/category"> Categories</Link>
-        <Link to="/viewer">Point Viewer</Link>
+        <button className="custom-button">
+          <Link to="/">Task Manager</Link>
+        </button>
+        <button className="custom-button">
+          <Link to="/category"> Categoriy Definition Editor</Link>
+        </button>
+        <button className="custom-button">
+          <Link to="/viewer">Cloud Point Viewer</Link>
+        </button>
         Current user:{" "}
         <UserDropdown
           users={props.users}

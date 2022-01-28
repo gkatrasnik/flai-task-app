@@ -98,7 +98,9 @@ function Task(props) {
                 </div>
               </div>
             </div>
-            <label className="task-details-text">Description:</label>
+            <label className="task-details-text">
+              <b>Description:</b>
+            </label>
             <div className="task-details-text task-description-text">
               <Markdown>{props.task.description}</Markdown>
             </div>
