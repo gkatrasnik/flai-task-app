@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
-import { v1 as uuid } from "uuid";
+import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
 import usersdata from "./data/users";
 import tasksdata from "./data/tasks";
 import Taskboard from "./components/Taskboard";
@@ -137,38 +137,42 @@ function App() {
 
   return (
     <div>
-      <Navigation
-        handleCurrentUser={handleCurrentUser}
-        currentUser={currentUser}
-        users={users}
-      />
-      {showAddTask && (
-        <AddTask
-          addNewTask={addNewTask}
-          users={users}
+      <HashRouter>
+        <Navigation
+          handleCurrentUser={handleCurrentUser}
           currentUser={currentUser}
-          toggleAddTask={toggleAddTask}
+          users={users}
         />
-      )}
-      <Sidebar
-        showSidebar={showSidebar}
-        updateShowTasksList={updateShowTasksList}
-        users={users}
-        toggleSidebar={toggleSidebar}
-      />
-      <Taskboard
-        users={users}
-        displayedTasks={displayedTasks}
-        filterDisplayedTasks={filterDisplayedTasks}
-        shownAssigneeTasksList={shownAssigneeTasksList}
-        moveTaskUp={moveTaskUp}
-        moveTaskDown={moveTaskDown}
-        deleteTask={deleteTask}
-        editTask={editTask}
-        toggleSidebar={toggleSidebar}
-        toggleAddTask={toggleAddTask}
-        currentUser={currentUser}
-      />
+        {showAddTask && (
+          <AddTask
+            addNewTask={addNewTask}
+            users={users}
+            currentUser={currentUser}
+            toggleAddTask={toggleAddTask}
+          />
+        )}
+        <Sidebar
+          showSidebar={showSidebar}
+          updateShowTasksList={updateShowTasksList}
+          users={users}
+          toggleSidebar={toggleSidebar}
+        />
+        <Routes>
+          <Taskboard
+            users={users}
+            displayedTasks={displayedTasks}
+            filterDisplayedTasks={filterDisplayedTasks}
+            shownAssigneeTasksList={shownAssigneeTasksList}
+            moveTaskUp={moveTaskUp}
+            moveTaskDown={moveTaskDown}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            toggleSidebar={toggleSidebar}
+            toggleAddTask={toggleAddTask}
+            currentUser={currentUser}
+          />
+        </Routes>
+      </HashRouter>
     </div>
   );
 }
