@@ -7,6 +7,7 @@ import Taskboard from "./components/Taskboard";
 import Navigation from "./components/Navigation";
 import Sidebar from "./components/Sidebar";
 import AddTask from "./components/AddTask";
+import PointCloudViewer from "./components/PointCloudViewer";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -189,7 +190,8 @@ function App() {
                 currentUser={currentUser}
               />
             }
-          ></Route>
+          />
+          <Route path="viewer" element={<PointCloudViewer />} />
         </Routes>
       </HashRouter>
     </div>
