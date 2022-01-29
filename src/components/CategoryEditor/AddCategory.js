@@ -4,35 +4,32 @@ import "../../App.scss";
 function AddCategory(props) {
   const [visible, setVisible] = useState(true);
   const [name, setName] = useState("");
-  const [color, setColor] = useState([]);
+  const [color, setColor] = useState();
 
-  const handleAddTask = () => {
+  const handleAddCategory = () => {
     if (!name) {
       return alert("please choose a name");
     }
 
     let newCategory = {
-      visible: true,
+      visible: visible,
       name: name,
       color: color,
     };
 
     props.addNewCategory(newCategory);
-    setName("");
+
     props.toggleAddCategory();
+    setName("");
   };
 
   const handleColorSelect = (color) => {
     setColor(color);
   };
 
-  useEffect(() => {
-    console.log("name: ", name, "color: ", color, " visible: ", visible);
-  });
-
   return (
     <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleAddTask}>
+      <button className="close-button" onClick={props.toggleAddCategory}>
         X
       </button>
       <h2 className="heading-center addtask-heading">Add Category</h2>
@@ -53,7 +50,7 @@ function AddCategory(props) {
           id="visible"
           name="visible"
           checked={visible}
-          onClick={(e) => setVisible(e.target.checked)}
+          onChange={(e) => setVisible(e.currentTarget.checked)}
         />
         <br />
         <label for="color">Color:</label>
@@ -62,10 +59,10 @@ function AddCategory(props) {
           id="color"
           name="color"
           value={color}
-          onChange={(e) => setColor(e.target.value)}
+          onInput={(e) => setColor(e.target.value)}
         />
         <br />
-        <button onClick={handleAddTask}>Add Category</button>
+        <button onClick={handleAddCategory}>Add Category</button>
       </div>
     </div>
   );
