@@ -3,11 +3,12 @@ import "./App.scss";
 import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
 import usersdata from "./data/users";
 import tasksdata from "./data/tasks";
-import Taskboard from "./components/Taskboard";
+import Taskboard from "./components/Taskboard/Taskboard";
 import Navigation from "./components/Navigation";
 import Sidebar from "./components/Sidebar";
-import AddTask from "./components/AddTask";
+import AddTask from "./components/Taskboard/AddTask";
 import PointCloudViewer from "./components/PointCloudViewer";
+import CategoryEditor from "./components/CategoryEditor/CategoryEditor";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -192,6 +193,7 @@ function App() {
             }
           />
           <Route path="viewer" element={<PointCloudViewer />} />
+          <Route path="category" element={<CategoryEditor />} />
         </Routes>
       </HashRouter>
     </div>
