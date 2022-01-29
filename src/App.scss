@@ -1,5 +1,7 @@
 @charset 'utf-8';
 
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
 $primary-color: #3890b8;
 $secondary-color: #ce5d1b;
 $yellow-color: #fff7ad;
@@ -8,6 +10,9 @@ $yellow-dark-color: #e7bd00;
 $background-dark-color: #b6b6b6;
 $background-light-color: #dadada;
 
+html {
+  font-family: "Roboto", sans-serif;
+}
 button {
   border: solid $secondary-color 1px;
   border-radius: 2px;
@@ -15,7 +20,7 @@ button {
 
 a {
   text-decoration: none;
-  color: black !important;
+  color: black;
 }
 
 .task-card {
@@ -92,12 +97,13 @@ a {
 .navigation-div {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 100%;
   height: 2rem;
   background-color: $background-dark-color;
-  position: absolute;
+  position: fixed;
   top: 0;
   border-bottom: solid $primary-color 2px;
   z-index: 1000;

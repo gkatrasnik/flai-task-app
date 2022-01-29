@@ -18,7 +18,7 @@ function Navigation(props) {
           <Link to="/category"> Categoriy Definition Editor</Link>
         </button>
         <button className="custom-button">
-          <Link to="/viewer">Cloud Point Viewer</Link>
+          <Link to="/viewer">Point Cloud Viewer</Link>
         </button>
         Current user:{" "}
         <UserDropdown

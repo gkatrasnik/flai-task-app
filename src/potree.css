@@ -58,15 +58,15 @@
   --color-3: rgba(45, 109, 130, 1);
   --color-4: rgba(16, 143, 185, 1);
 
-  --bg-color: var(--color-0);
-  --bg-color-2: rgb(60, 80, 85);
+  --bg-color: #b6b6b6;
+  --bg-color-2: #dadada;
   --bg-light-color: rgba(48, 61, 65, 1);
   --bg-dark-color: rgba(24, 31, 33, 1);
   --bg-hover-color: var(--color-2);
 
   --font-color: #9aa1a4;
-  --font-color-2: #ddd;
-  --font-color: #cccccc;
+  --font-color-2: #9aa1a4;
+  --font-color: black;
   --border-color: black;
 
   --measurement-detail-node-bg-light: var(--color-1);
@@ -79,7 +79,7 @@
   top: 4rem;
   z-index: 0;
   width: 350px;
-  height: 100%;
+  height: calc(100vh - 4rem) !important;
   overflow-y: scroll;
   font-size: 85%;
   border-right: 1px solid black;
@@ -88,7 +88,6 @@
 
 #sidebar_root {
   color: var(--font-color);
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
 }
 
@@ -119,7 +118,6 @@
   margin: 5px;
   border-radius: 4px;
   color: var(--font-color);
-  font-family: Arial;
   opacity: 0.8;
   border: 1px solid black;
   display: flex;
@@ -210,10 +208,8 @@
 }
 
 a:hover,
-a:visited,
-a:link,
 a:active {
-  color: #ccccff;
+  color: #919191;
   text-decoration: none;
 }
 
@@ -251,7 +247,6 @@ a:active {
   vertical-align: middle;
   line-height: 1.5em;
   text-align: center;
-  font-family: Arial;
   font-weight: bold;
   cursor: pointer;
 }
@@ -295,7 +290,6 @@ a:active {
   z-index: 100;
   vertical-align: middle;
   line-height: 1.5em;
-  font-family: Arial;
   font-weight: bold;
   cursor: pointer;
   white-space: nowrap;
@@ -343,7 +337,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 .axis {
@@ -487,9 +480,7 @@ body {
   cursor: pointer;
   margin: 2px 0 0 0;
   padding: 4px 10px 4px 30px;
-  box-shadow: 0px 3px 3px #111;
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-    -1px 1px 0 #000, 1px 1px 0 #000;
+  color: black;
   font-size: 1em;
 }
 
@@ -707,7 +698,6 @@ body {
   color: black;
   font-weight: bold;
   font-size: 1.2em;
-  font-family: arial;
 }
 
 .zs_handle:hover {
