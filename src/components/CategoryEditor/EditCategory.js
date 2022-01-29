@@ -35,7 +35,7 @@ function EditCategory(props) {
 
   return (
     <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleAddTask}>
+      <button className="close-button" onClick={props.toggleEditCategory}>
         X
       </button>
       <h2 className="heading-center addtask-heading">Edit Category</h2>
