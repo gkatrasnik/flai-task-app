@@ -38,7 +38,7 @@ function CategoryEditor(props) {
 
     let rawcategories = localStorage.getItem("categories");
     let parsedData = result; // set whatever the default value should be if there is no localStorage value
-    if (!rawcategories) {
+    if (rawcategories == null) {
       console.log("result", result);
       setCategories(result);
     } else {
@@ -48,19 +48,28 @@ function CategoryEditor(props) {
     }
   };*/
 
-  const getCategoriesData = () => {
+  /*const getCategoriesData = () => {
     const result = Object.values(data);
 
     setCategories(result);
+  };*/
+
+  const getCategoriesData = () => {
+    let datag = localStorage.getItem("categories");
+    if (datag === null || datag === undefined) {
+      console.log("null or undefined");
+    } else {
+      console.log(typeof datag);
+    }
   };
 
   const setCategoriesData = () => {
+    console.log("stringifing");
     localStorage.setItem("categories", JSON.stringify(categories));
   };
 
   useEffect(() => {
     setCategoriesData();
-    console.log(categories);
   }, [categories]);
 
   useEffect(() => {

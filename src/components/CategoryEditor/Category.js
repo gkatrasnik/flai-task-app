@@ -58,10 +58,7 @@ function Category(props) {
           </div>
           <label className="task-details-text">Color:</label>
           <input type="checkbox" checked={visible}></input>
-          <div
-            className="color-box"
-            style={{ backgroundColor: props.category.color }}
-          />
+          <input type="color" id="color" name="color" value={color} disabled />
         </div>
       </div>
     </>
