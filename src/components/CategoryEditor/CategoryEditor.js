@@ -21,7 +21,6 @@ function CategoryEditor(props) {
     let categoriesArr = [...categories];
     let categoryIndex = categoriesArr.indexOf(oldcategory);
     categoriesArr[categoryIndex] = newcategory;
-    console.log(categoriesArr); //----------------------------------------------
     setCategories(categoriesArr);
   };
 
@@ -39,12 +38,12 @@ function CategoryEditor(props) {
     let rawcategories = localStorage.getItem("categories");
     let parsedData = result;
     if (rawcategories == null) {
-      console.log("result", result);
       setCategories(result);
+      console.log("from file", result);
     } else {
-      console.log("raw categories", rawcategories);
       parsedData = JSON.parse(rawcategories);
       setCategories(parsedData); //data from tasks.js file
+      console.log("from LS", parsedData);
     }
   };
 

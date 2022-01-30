@@ -5,31 +5,31 @@ function EditCategory(props) {
   const [visible, setVisible] = useState();
   const [name, setName] = useState();
   const [color, setColor] = useState();
+  const [hex, setHex] = useState();
 
   const handleEditCategory = () => {
     if (!name) {
       return alert("please choose a name");
     }
 
+    let newcolor = props.makeJSONColor(hex);
+
     let newCategory = {
       visible: visible,
       name: name,
-      color: color,
+      color: newcolor,
     };
-
+    console.log("new cat. ", newCategory);
     props.editCategory(props.category, newCategory);
     props.toggleEditCategory();
 
     setName("");
   };
 
-  const handleColorSelect = (color) => {
-    setColor(color);
-  };
-
   useEffect(() => {
     setVisible(props.visible);
     setColor(props.color);
+    setHex(props.hex);
     setName(props.name);
   }, [props]);
 
@@ -64,8 +64,8 @@ function EditCategory(props) {
           type="color"
           id="color"
           name="color"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
+          value={hex}
+          onChange={(e) => setHex(e.target.value)}
         />
         <br />
         <button onClick={handleEditCategory}>Update Category</button>
