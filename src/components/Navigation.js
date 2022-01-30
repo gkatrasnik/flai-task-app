@@ -27,7 +27,7 @@ const Navigation = (props) => {
               <Link to="/">Task Manager</Link>
             </li>
             <li className="option" onClick={closeMobileMenu}>
-              <Link to="/category"> Categoriy Definition Editor</Link>
+              <Link to="/category"> Category Definition Editor</Link>
             </li>
             <li className="option" onClick={closeMobileMenu}>
               <Link to="/viewer">Point Cloud Viewer</Link>

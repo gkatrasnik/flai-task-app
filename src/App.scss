@@ -3,7 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 $primary-color: #0452f8;
 $primary-light-color: #6091fa;
-$secondary-color: #ce5d1b;
 $yellow-color: #fff7ad;
 $yellow-dark-color: #e7bd00;
 
@@ -89,8 +88,8 @@ select {
 }
 
 .taskboard-buttons {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .task-details-text {
@@ -139,9 +138,10 @@ select {
 
 .sidebaruser-div {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   font-size: large;
+  padding: 0 10px;
 }
 
 .sidebar-header {

@@ -5,6 +5,9 @@ function SidebarUser(props) {
   const [checked, setChecked] = useState(true);
   return (
     <div className="sidebaruser-div">
+      <label for={props.user.userid} className="sidebaruser-label">
+        {props.user.name} {props.user.surname}
+      </label>
       <input
         type="checkbox"
         id={props.user.userid}
@@ -13,9 +16,6 @@ function SidebarUser(props) {
         onChange={(e) => props.updateShowTasksList(e.target.value)}
         defaultChecked={checked}
       />
-      <label for={props.user.userid} className="sidebaruser-label">
-        {props.user.name} {props.user.surname}
-      </label>
     </div>
   );
 }
