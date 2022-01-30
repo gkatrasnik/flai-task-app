@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import UserDropdown from "./UserDropdown";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-
 import "../App.scss";
 
 const Navigation = (props) => {

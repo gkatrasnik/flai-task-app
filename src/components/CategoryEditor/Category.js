@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../App.scss";
-
 import EditCategory from "../CategoryEditor/EditCategory";
 const tinycolor = require("tinycolor2");
 

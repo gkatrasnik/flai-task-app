@@ -139,7 +139,6 @@ function App() {
     getTasksData();
 
     //populates displayed users and displayed tasks
-
     populateShowUsersTasks();
     populateDisplayedTasks();
     handleCurrentUser(usersdata[0].userid);
