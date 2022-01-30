@@ -52,7 +52,7 @@ function Category(props) {
       <div className="task-card box-shadow category-div">
         <div>
           <div className="task-details">
-            <h5 className="task-details-text">{name}</h5>
+            <h5>{name}</h5>
             <div className="task-buttons">
               <div className="control-buttons">
                 <button
@@ -74,10 +74,10 @@ function Category(props) {
               </div>
             </div>
           </div>
-          <label className="task-details-text">Visible:</label>
+          <label>Visible:</label>
 
           <input type="checkbox" checked={visible} disabled></input>
-          <label className="task-details-text">Color:</label>
+          <label className="color-margin">Color:</label>
           <input type="color" id="color" name="color" value={hex} disabled />
         </div>
       </div>

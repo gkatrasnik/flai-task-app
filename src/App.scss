@@ -34,11 +34,11 @@ select {
   flex-direction: column;
   justify-content: center;
   width: 80vw;
-  max-width: 24rem;
+  max-width: 22rem;
   min-height: 5rem;
   border: solid $primary-color 2px;
   margin-bottom: 2rem;
-
+  padding: 15px 15px 15px 15px;
   background-color: $yellow-color;
   cursor: pointer;
 
@@ -92,8 +92,8 @@ select {
   margin-bottom: 25px;
 }
 
-.task-details-text {
-  margin-left: 2rem;
+.color-margin {
+  margin-left: 4rem;
 }
 
 .task-description-text {
@@ -228,7 +228,8 @@ select {
   background-color: $primary-light-color;
   border: solid $primary-color 2px;
   max-width: 15rem;
-  padding: 5px;
+  padding: 0 15px 15px 15px;
+
   cursor: auto;
 }
 
@@ -283,7 +284,7 @@ select {
   justify-content: center;
   color: white;
 }
-@media (max-width: 648px) {
+@media (max-width: 900px) {
   /*Mobile View */
 
   option,

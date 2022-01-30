@@ -73,7 +73,7 @@ function Task(props) {
         {taskExpanded && (
           <div>
             <div className="task-details">
-              <p className="task-details-text">
+              <p>
                 Task by: {reporter.name} {reporter.surname}
               </p>
               <div className="task-buttons">
@@ -99,10 +99,10 @@ function Task(props) {
                 </div>
               </div>
             </div>
-            <label className="task-details-text">
+            <label>
               <b>Description:</b>
             </label>
-            <div className="task-details-text task-description-text">
+            <div className="task-description-text">
               <Markdown>{props.task.description}</Markdown>
             </div>
           </div>
