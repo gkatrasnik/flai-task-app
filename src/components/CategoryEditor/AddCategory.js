@@ -5,26 +5,25 @@ function AddCategory(props) {
   const [visible, setVisible] = useState(true);
   const [name, setName] = useState("");
   const [color, setColor] = useState();
+  const [hex, setHex] = useState("#000000");
 
   const handleAddCategory = () => {
     if (!name) {
       return alert("please choose a name");
     }
 
+    let newcolor = props.makeJSONColor(hex);
+
     let newCategory = {
       visible: visible,
       name: name,
-      color: color,
+      color: newcolor,
     };
 
+    console.log("new cat. ", newCategory);
     props.addNewCategory(newCategory);
-
     props.toggleAddCategory();
     setName("");
-  };
-
-  const handleColorSelect = (color) => {
-    setColor(color);
   };
 
   return (
@@ -53,13 +52,13 @@ function AddCategory(props) {
           onChange={(e) => setVisible(e.currentTarget.checked)}
         />
         <br />
-        <label for="color">Color:</label>
+        <label for="hex">Color:</label>
         <input
           type="color"
-          id="color"
-          name="color"
-          value={color}
-          onInput={(e) => setColor(e.target.value)}
+          id="hex"
+          name="hex"
+          value={hex}
+          onInput={(e) => setHex(e.target.value)}
         />
         <br />
         <button onClick={handleAddCategory}>Add Category</button>

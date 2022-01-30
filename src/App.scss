@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
 $primary-color: #3890b8;
+$primary-light-color: #86b5ca;
 $secondary-color: #ce5d1b;
 $yellow-color: #fff7ad;
 $yellow-dark-color: #e7bd00;
@@ -28,7 +29,7 @@ a {
   flex-direction: column;
   justify-content: center;
   width: 80vw;
-  max-width: 25rem;
+  max-width: 24rem;
   min-height: 5rem;
   border: solid $yellow-dark-color 2px;
   margin-bottom: 2rem;
@@ -222,7 +223,9 @@ a {
   box-shadow: 5px 5px 10px grey;
 }
 
-.color-box {
-  width: 30px;
-  height: 20px;
+.category-div {
+  background-color: $primary-light-color;
+  border: solid $primary-color 2px;
+  max-width: 15rem;
+  padding: 5px;
 }

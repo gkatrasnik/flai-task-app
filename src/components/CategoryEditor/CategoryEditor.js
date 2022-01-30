@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AddCategory from "./AddCategory";
 import Category from "./Category";
 import data from "../../data/categories";
+const tinycolor = require("tinycolor2");
 
 function CategoryEditor(props) {
   const [categories, setCategories] = useState();
@@ -52,8 +53,21 @@ function CategoryEditor(props) {
       localStorage.setItem("categories", JSON.stringify(categories));
   };
 
+  const makeJSONColor = (hex) => {
+    let color = tinycolor(hex);
+    let rgb = color.toRgb();
+    let values = Object.values(rgb);
+    let json = [];
+    for (let i = 0; i < 3; i++) {
+      json.push(Number(values[i] / 255).toFixed(2));
+    }
+    json.push(values[3]);
+    return json;
+  };
+
   useEffect(() => {
     setCategoriesData();
+    console.log("categories", categories);
   }, [categories]);
 
   useEffect(() => {
@@ -66,6 +80,7 @@ function CategoryEditor(props) {
         <AddCategory
           addNewCategory={addNewCategory}
           toggleAddCategory={toggleAddCategory}
+          makeJSONColor={makeJSONColor}
         />
       )}
       <div className="taskboard">
@@ -85,6 +100,7 @@ function CategoryEditor(props) {
                     category={category}
                     deleteCategory={deleteCategory}
                     editCategory={editCategory}
+                    makeJSONColor={makeJSONColor}
                   />
                 </li>
               );
