@@ -1,5 +1,9 @@
 # Flai-task-app
 
+## Live site
+
+https://gtaskapp.netlify.app/
+
 ## Instructions
 
 Clone repository, run "npm install" and then "npm start" command to start the app on localhost:3000
