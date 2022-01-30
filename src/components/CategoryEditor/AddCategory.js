@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../App.scss";
+import { FaTimes } from "react-icons/fa";
 
 function AddCategory(props) {
   const [visible, setVisible] = useState(true);
@@ -28,9 +29,9 @@ function AddCategory(props) {
 
   return (
     <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleAddCategory}>
-        X
-      </button>
+      <div className="close-button" onClick={props.toggleAddCategory}>
+        <FaTimes />
+      </div>
       <h2 className="heading-center addtask-heading">Add Category</h2>
 
       <div className="addtask-form">

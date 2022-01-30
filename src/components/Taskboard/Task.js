@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../App.scss";
 import EditTask from "./EditTask";
 import Markdown from "marked-react";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 
 function Task(props) {
   const [assignee, setAssignee] = useState("");
@@ -46,27 +47,27 @@ function Task(props) {
       )}
       <div className="task-card box-shadow" onClick={handleTaskClick}>
         <div className="task-card-header">
-          <h5 className="task-title">{props.task.topic} </h5>
-          <p className="task-details-text">
+          <h4 className="task-title">{props.task.topic} </h4>
+          <p className="for-text">
             For: {assignee.name} {assignee.surname}
           </p>
           <div className="updown custom-button">
-            <button
+            <div
               onClick={(e) => {
                 e.stopPropagation();
                 props.moveTaskUp(props.task);
               }}
             >
-              ↑
-            </button>
-            <button
+              <FaAngleUp />
+            </div>
+            <div
               onClick={(e) => {
                 e.stopPropagation();
                 props.moveTaskDown(props.task);
               }}
             >
-              ↓
-            </button>
+              <FaAngleDown />
+            </div>
           </div>
         </div>
         {taskExpanded && (

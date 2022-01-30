@@ -84,7 +84,9 @@ function CategoryEditor(props) {
         />
       )}
       <div className="taskboard">
-        <h1 className="heading-center taskboard-heading">Categories</h1>
+        <h2 className="heading-center taskboard-heading">
+          Categoriy Definition Editor
+        </h2>
         <div className="heading-center taskboard-buttons">
           <button onClick={toggleAddCategory} className="custom-button">
             Add Category

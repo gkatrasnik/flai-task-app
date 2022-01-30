@@ -1,18 +1,15 @@
 import React from "react";
 import "../App.scss";
 import SidebarUser from "./SidebarUser";
+import { FaTimes } from "react-icons/fa";
 
 function Sidebar(props) {
   return (
-    <div
-      className={`sidebar-div box-shadow ${
-        props.showSidebar ? "sidebar-shown" : "sidebar-hidden"
-      }`}
-    >
-      <button className="close-button" onClick={props.toggleSidebar}>
-        X
-      </button>
-      <h2>Tasks for:</h2>
+    <div className={props.showSidebar ? "sidebar-div active" : "sidebar-div"}>
+      <div className="close-button" onClick={props.toggleSidebar}>
+        <FaTimes style={{ color: "white" }} />
+      </div>
+      <h2 className="sidebar-header">Tasks for:</h2>
       {props.users ? (
         <ul className="sidebar-ul">
           {props.users.map((user, index) => {

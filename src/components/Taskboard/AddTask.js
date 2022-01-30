@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v1 as uuid } from "uuid";
 import "../../App.scss";
+import { FaTimes } from "react-icons/fa";
 
 import UserDropdown from "../UserDropdown";
 
@@ -34,9 +35,9 @@ function AddTask(props) {
 
   return (
     <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleAddTask}>
-        X
-      </button>
+      <div className="close-button" onClick={props.toggleAddTask}>
+        <FaTimes />
+      </div>
       <h2 className="heading-center addtask-heading">Add Task</h2>
 
       <div className="addtask-form">
@@ -67,7 +68,7 @@ function AddTask(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
         <br />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button onClick={handleAddTask}>Add</button>
       </div>
     </div>
   );

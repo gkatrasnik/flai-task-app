@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import "../../App.scss";
 
 import UserDropdown from "../UserDropdown";
@@ -33,9 +34,9 @@ function EditTask(props) {
 
   return (
     <div className="edittask-div">
-      <button className="close-button" onClick={props.toggleEditTask}>
-        X
-      </button>
+      <div className="close-button" onClick={props.toggleEditTask}>
+        <FaTimes />
+      </div>
       <h2 className="heading-center addtask-heading">Edit Task</h2>
 
       <div className="addtask-form">
@@ -66,7 +67,7 @@ function EditTask(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
         <br />
-        <button onClick={handleEditTask}>Update Task</button>
+        <button onClick={handleEditTask}>Update</button>
       </div>
     </div>
   );

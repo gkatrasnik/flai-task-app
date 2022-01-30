@@ -77,7 +77,7 @@ function Category(props) {
           </div>
           <label className="task-details-text">Visible:</label>
 
-          <input type="checkbox" checked={visible}></input>
+          <input type="checkbox" checked={visible} disabled></input>
           <label className="task-details-text">Color:</label>
           <input type="color" id="color" name="color" value={hex} disabled />
         </div>

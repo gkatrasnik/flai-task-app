@@ -4,7 +4,7 @@ import Task from "./Task";
 function Taskboard(props) {
   return (
     <div className="taskboard">
-      <h1 className="heading-center taskboard-heading">Tasks</h1>
+      <h2 className="heading-center taskboard-heading">Taskboard</h2>
       <div className="heading-center taskboard-buttons">
         <button onClick={props.toggleSidebar} className="custom-button">
           Filter tasks

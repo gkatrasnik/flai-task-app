@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
 import "../../App.scss";
 
 function EditCategory(props) {
@@ -35,9 +36,9 @@ function EditCategory(props) {
 
   return (
     <div className="addtask-div">
-      <button className="close-button" onClick={props.toggleEditCategory}>
-        X
-      </button>
+      <div className="close-button" onClick={props.toggleEditCategory}>
+        <FaTimes />
+      </div>
       <h2 className="heading-center addtask-heading">Edit Category</h2>
 
       <div className="addtask-form">

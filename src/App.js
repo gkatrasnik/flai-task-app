@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
-import { HashRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import usersdata from "./data/users";
 import tasksdata from "./data/tasks";
 import Taskboard from "./components/Taskboard/Taskboard";
