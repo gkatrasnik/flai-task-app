@@ -21,7 +21,6 @@ function AddCategory(props) {
       color: newcolor,
     };
 
-    console.log("new cat. ", newCategory);
     props.addNewCategory(newCategory);
     props.toggleAddCategory();
     setName("");

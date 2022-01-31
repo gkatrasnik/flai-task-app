@@ -40,11 +40,9 @@ function CategoryEditor(props) {
     let parsedData = result;
     if (rawcategories == null) {
       setCategories(result);
-      console.log("from file", result);
     } else {
       parsedData = JSON.parse(rawcategories);
       setCategories(parsedData); //data from tasks.js file
-      console.log("from LS", parsedData);
     }
   };
 
@@ -67,7 +65,6 @@ function CategoryEditor(props) {
 
   useEffect(() => {
     setCategoriesData();
-    console.log("categories", categories);
   }, [categories]);
 
   useEffect(() => {

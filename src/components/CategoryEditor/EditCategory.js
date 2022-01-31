@@ -20,7 +20,6 @@ function EditCategory(props) {
       name: name,
       color: newcolor,
     };
-    console.log("new cat. ", newCategory);
     props.editCategory(props.category, newCategory);
     props.toggleEditCategory();
 
